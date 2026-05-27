@@ -167,7 +167,7 @@ export class MCPHub extends EventEmitter {
     try {
       const isSignificant = !!changes ? (changes.added?.length > 0 || changes.removed?.length > 0 || changes.modified?.length > 0) : false
       this.emit("configChangeDetected", { newConfig, isSignificant })
-      //Even when some error occured on reloading, send the event to clients
+      // Even when some error occurred on reloading, send the event to clients
       if (!newConfig || !changes) {
         return
       }
